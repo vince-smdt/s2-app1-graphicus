@@ -18,6 +18,10 @@ Vecteur::~Vecteur() {
     vider();
 }
 
+int Vecteur::capacite() {
+    return _capacite;
+}
+
 void Vecteur::doublerCapacite() {
     _capacite *= 2;
 

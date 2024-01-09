@@ -32,6 +32,7 @@ public:
     Vecteur();
     ~Vecteur();
 
+    int capacite();
     void doublerCapacite();
     void vider();
     void afficher(ostream &flot);
