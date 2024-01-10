@@ -33,16 +33,16 @@ void Tests::tests_unitaires_formes()
     int h = 8;
     Forme *forme = creer_forme(); // Rectangle
     Forme *formeCercle = new Cercle(x, y, l);
-    Forme *fromeCarre = new Carre(l);
+    Forme *fromeCarre = new Carre(x, y, l);
 
     if(forme->aire() != l * h)
-        cout << "Erreur: L'air du rectangle devrait être de 40" << endl;
+        cout << "Erreur: L'aire du rectangle devrait être de 40" << endl;
 
     if(formeCercle->aire() != PI * l * l)
-        cout << "Erreur: L'air du rectangle devrait être de 40" << endl;
+        cout << "Erreur: L'aire du cercle devrait être de 40" << endl;
 
     if(fromeCarre->aire() != l * l)
-        cout << "Erreur: L'air du rectangle devrait être de 25" << endl;
+        cout << "Erreur: L'aire du carre devrait être de 25" << endl;
 
   
 
