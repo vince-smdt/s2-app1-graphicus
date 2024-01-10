@@ -146,6 +146,9 @@ void Tests::tests_unitaires_couche()
     if(couche->aireTotal() == 0)
         cout << "Erreur: Lorsque l'état est Active airTotal devrait retourner l'air et non 0" << endl;
 
+    if(couche->getEtat() == Couche::Active)
+        cout << "Couche active" << endl;
+
     if(couche->translater(4, 4) != true)
         cout << "Erreur: Lorsque la couche est Active et que l'on appel translater() le méthode devrait retourner true" << endl;
         
