@@ -14,9 +14,8 @@ Forme* créer_forme() {
     int y = 2;
     int l = 5;
     int h = 8;
-    Forme *forme = new Rectangle(x, y, l, h);
 
-    return forme;
+    return new Rectangle(x, y, l, h);
 }
 
 void Tests::tests_unitaires_formes()
@@ -188,6 +187,7 @@ void Tests::tests_unitaires_canevas()
     Forme *forme = créer_forme();
 
     // Par défaut la couche est supposé être active
+
     if(canevas->ajouterForme(forme) != true)
          cout << "Erreur: lorsque l'on ajoute une forme et que la couche est active cela devrait retourner true" << endl;
 
@@ -211,10 +211,10 @@ void Tests::tests_unitaires_canevas()
     if(canevas->ajouterForme(forme) != true)
          cout << "Erreur: lorsque l'on retire une forme et que la couche est active cela devrait retourner true" << endl;
 
-
     if(canevas->reinitialiserCouche(5) != false)
          cout << "Erreur: lorsque l'on reinitialiserCouche() à un index supérieur au nombre de couche cela doit retourner false" << endl;
 
+    forme = créer_forme();
     if(canevas->reinitialiserCouche(0) != true)
          cout << "Erreur: lorsque l'on reinitialiserCouche() à un index existant cela doit retourner true" << endl;
 

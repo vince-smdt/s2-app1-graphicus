@@ -37,7 +37,7 @@ void Vecteur::doublerCapacite() {
 void Vecteur::vider() {
     for (int i = 0; i < _taille; i++)
         delete _formes[i];
-
+    
     _taille = 0;
     _capacite = CAPACITE_DEPART;
     _formes = new Forme * [_capacite];

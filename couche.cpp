@@ -34,7 +34,8 @@ bool Couche::translater(int deltaX, int deltaY) {
 }
 
 bool Couche::reinitialiser() {
-    etat = Initialisee;
+    changerEtat(Initialisee);
+
     formes.vider();
 
     if(formes.taille() != 0)
