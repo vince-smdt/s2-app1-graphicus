@@ -54,7 +54,7 @@ Couche::Etat Couche::getEtat() {
 }
 
 double Couche::aireTotal() {
-    if (etat = Initialisee)
+    if (etat == Initialisee)
         return 0;
 
     double somme = 0;

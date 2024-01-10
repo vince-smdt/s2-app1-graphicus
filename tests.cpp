@@ -21,6 +21,7 @@ Forme* créer_forme() {
 
 void Tests::tests_unitaires_formes()
 {
+    cout << "Debut - tests_unitaires_formes" << endl;
     // Tests sur les formes geometriques
 
     // Formes utilis�es pour les tests
@@ -50,6 +51,8 @@ void Tests::tests_unitaires_formes()
 
 void Tests::tests_unitaires_vecteur()
 {
+    cout << "Debut - tests_unitaires_vecteur" << endl;
+
     // Tests sur la classe Vecteur
     Vecteur *vecteur = new Vecteur();
     Forme *forme = créer_forme();
@@ -110,10 +113,15 @@ void Tests::tests_unitaires_vecteur()
     vecteur->doublerCapacite();
     if(vecteur->capacite() != 8)
         cout << "Erreur: La capacite devrait être de 4 puisqu'elle a été doublé 2 fois" << endl;      
+
+    cout << "Fin - tests_unitaires_vecteur" << endl;
+    
 }
 
 void Tests::tests_unitaires_couche()
 {
+    cout << "Debut - tests_unitaires_couche" << endl;
+
     // Tests sur la classe Couche
     Couche *couche = new Couche();
     Forme *forme = créer_forme();
@@ -166,10 +174,15 @@ void Tests::tests_unitaires_couche()
     couche->ajouterForme(forme);
     if(couche->reinitialiser() != true)
          cout << "Erreur: reinitialiser() à été appelé et la taille dans forme est différente de 0 " << endl;
+    
+    cout << "Fin - tests_unitaires_couche" << endl;
+
 }
 
 void Tests::tests_unitaires_canevas()
 {
+    cout << "Debut - tests_unitaires_canevas" << endl;
+
     // Tests sur la classe Canevas
     Canevas *canevas = new Canevas();
     Forme *forme = créer_forme();
@@ -207,6 +220,8 @@ void Tests::tests_unitaires_canevas()
 
     if(canevas->reinitialiser() != true)
          cout << "Erreur: Réinitialiser doit retourner true" << endl;
+
+    cout << "Fin - tests_unitaires_canevas" << endl;
 }
 
 void Tests::tests_unitaires()
