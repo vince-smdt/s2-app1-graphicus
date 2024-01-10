@@ -207,6 +207,7 @@ void Tests::tests_unitaires_canevas()
     if(canevas->retirerForme(0) != false)
             cout << "Erreur: lorsque l'on retire une forme et que la couche est inactive cela devrait retourner false" << endl;
 
+    forme = créer_forme();
     canevas->activerCouche(0);
     if(canevas->ajouterForme(forme) != true)
          cout << "Erreur: lorsque l'on retire une forme et que la couche est active cela devrait retourner true" << endl;
@@ -214,7 +215,6 @@ void Tests::tests_unitaires_canevas()
     if(canevas->reinitialiserCouche(5) != false)
          cout << "Erreur: lorsque l'on reinitialiserCouche() à un index supérieur au nombre de couche cela doit retourner false" << endl;
 
-    forme = créer_forme();
     if(canevas->reinitialiserCouche(0) != true)
          cout << "Erreur: lorsque l'on reinitialiserCouche() à un index existant cela doit retourner true" << endl;
 
