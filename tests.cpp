@@ -41,12 +41,10 @@ void Tests::tests_unitaires_formes()
     if(formeCercle->aire() != PI * l * l)
         cout << "Erreur: L'air du rectangle devrait être de 40" << endl;
 
-    if(forme->aire() != l * l)
+    if(fromeCarre->aire() != l * l)
         cout << "Erreur: L'air du rectangle devrait être de 25" << endl;
 
-    forme->setAncrage(c);
-    if(forme->getAncrage().x != c.x && forme->getAncrage().y != c.y)
-        cout << "Erreur: getAncrage devrait retourner 2 pour x et 3 pour y" << endl;
+  
 
     // Forme::getAncrage()
     if (forme->getAncrage().x != x || forme->getAncrage().y != y)
@@ -55,9 +53,13 @@ void Tests::tests_unitaires_formes()
     // Forme::translater()
     int deltaX = 2;
     int deltaY = -3;
-    forme->translater(2, -3);
+    forme->translater(deltaX, deltaY);
     if (forme->getAncrage().x != x + deltaX || forme->getAncrage().y != y + deltaY)
         cout << "Erreur: Rectangle::translater() - Mauvaise valeur retournee apres translation" << endl;
+
+    forme->setAncrage(c);
+    if(forme->getAncrage().x != c.x && forme->getAncrage().y != c.y)
+        cout << "Erreur: getAncrage devrait retourner 2 pour x et 3 pour y" << endl;
 
     cout << "TERMINe - tests_unitaires_formes" << endl;
 }
