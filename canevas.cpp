@@ -35,8 +35,13 @@ bool Canevas::reinitialiserCouche(int index)
 {
     if (index < 0 || index >= MAX_COUCHES)
         return false;
+    
+    bool etaitActive = _couches[index].getEtat() == Couche::Active;
 
-    return _couches[index].reinitialiser();
+    bool succes = _couches[index].reinitialiser();
+    if(etaitActive == true)
+        _couches[index].changerEtat(Couche::Active);
+    return succes;
 }
 
 bool Canevas::activerCouche(int index)

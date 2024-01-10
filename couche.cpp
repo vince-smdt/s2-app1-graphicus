@@ -34,7 +34,7 @@ bool Couche::translater(int deltaX, int deltaY) {
 }
 
 bool Couche::reinitialiser() {
-    changerEtat(Initialisee);
+    etat = Initialisee;
 
     formes.vider();
 
@@ -44,7 +44,7 @@ bool Couche::reinitialiser() {
 }
 
 bool Couche::changerEtat(Etat e) {
-    if(e != Couche::Active && e != Couche::Inactive && e != Couche::Initialisee)
+    if(e != Couche::Active && e != Couche::Inactive)
         return false;
     etat = e;
     return true;
