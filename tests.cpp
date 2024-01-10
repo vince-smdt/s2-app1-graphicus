@@ -137,6 +137,9 @@ void Tests::tests_unitaires_couche()
         cout << "Erreur: Lorsque l'état est Initialisee airTotal devrait retourner 0" << endl;
 
     couche->changerEtat(Couche::Active);
+    if(couche->translater(4, 4) != true)
+        cout << "Erreur: Lorsque la couche est Active et que l'on appel translater() le méthode devrait retourner true" << endl;
+        
     if(couche->ajouterForme(forme) != true)
         cout << "Erreur: Lorsque la couche est Active et que l'on ajoute une forme ajouterForme devrait retourner true" << endl;
     
@@ -146,12 +149,6 @@ void Tests::tests_unitaires_couche()
     if(couche->aireTotal() == 0)
         cout << "Erreur: Lorsque l'état est Active airTotal devrait retourner l'air et non 0" << endl;
 
-    if(couche->getEtat() == Couche::Active)
-        cout << "Couche active" << endl;
-
-    if(couche->translater(4, 4) != true)
-        cout << "Erreur: Lorsque la couche est Active et que l'on appel translater() le méthode devrait retourner true" << endl;
-        
     couche->changerEtat(Couche::Inactive);
     if(couche->ajouterForme(forme) != false)
         cout << "Erreur: Lorsque la couche est Inactive et que l'on appel ajouterForme() le méthode devrait retourner false" << endl;
