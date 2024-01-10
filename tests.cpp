@@ -10,7 +10,6 @@
 #include "tests.h"
 
 Forme* créer_forme() {
-    // Formes utilis�es pour les tests
     int x = 3;
     int y = 2;
     int l = 5;
@@ -116,11 +115,98 @@ void Tests::tests_unitaires_vecteur()
 void Tests::tests_unitaires_couche()
 {
     // Tests sur la classe Couche
+    Couche *couche = new Couche();
+    Forme *forme = créer_forme();
+
+    if(couche->getEtat() != Couche::Initialisee)
+        cout << "Erreur: L'etat de base devrait être 'Initialisee'" << endl;      
+
+    couche->changerEtat(Couche::Active);
+    if(couche->getEtat() != Couche::Active)
+            cout << "Erreur: L'etat devrait être 'Active'" << endl;
+
+    couche->changerEtat(Couche::Inactive);
+    if(couche->getEtat() != Couche::Inactive)
+            cout << "Erreur: L'etat devrait être 'Inactive'" << endl; 
+
+    couche->changerEtat(Couche::Initialisee);
+    if(couche->getEtat() != Couche::Initialisee)
+            cout << "Erreur: L'etat devrait être 'Initialisee'" << endl;
+    
+    if(couche->aireTotal() != 0)
+        cout << "Erreur: Lorsque l'état est Initialisee airTotal devrait retourner 0" << endl;
+
+    couche->changerEtat(Couche::Active);
+    if(couche->ajouterForme(forme) != true)
+        cout << "Erreur: Lorsque la couche est Active et que l'on ajoute une forme ajouterForme devrait retourner true" << endl;
+    
+    if(couche->obtenirForme(0) != forme)
+         cout << "Erreur: Lorsque l'on appel obtenirForme() cela devrait retourner la forme de l'index" << endl;
+
+    if(couche->aireTotal() == 0)
+        cout << "Erreur: Lorsque l'état est Active airTotal devrait retourner l'air et non 0" << endl;
+
+     if(couche->translater(4, 4) != true)
+        cout << "Erreur: Lorsque la couche est Active et que l'on appel translater() le méthode devrait retourner true" << endl;
+
+    couche->changerEtat(Couche::Inactive);
+    if(couche->ajouterForme(forme) != false)
+        cout << "Erreur: Lorsque la couche est Inactive et que l'on appel ajouterForme() le méthode devrait retourner false" << endl;
+
+    if(couche->translater(4, 4) != false)
+        cout << "Erreur: Lorsque la couche est Inactive et que l'on appel translater() le méthode devrait retourner false" << endl;
+
+    if(couche->retirerForme(0) != nullptr)
+         cout << "Erreur: Lorsque l'on retire une forme d'une couche et que l'état est différent de Active retirerForme() devrait retourner nullptr" << endl;
+
+    couche->changerEtat(Couche::Active);
+    if(couche->retirerForme(0) != forme)
+         cout << "Erreur: Lorsque l'on retire une forme d'une couche et que l'état est Active retirerForme() devrait retourner la forme retirer" << endl;
+
+    couche->ajouterForme(forme);
+    if(couche->reinitialiser() != true)
+         cout << "Erreur: reinitialiser() à été appelé et la taille dans forme est différente de 0 " << endl;
 }
 
 void Tests::tests_unitaires_canevas()
 {
     // Tests sur la classe Canevas
+    Canevas *canevas = new Canevas();
+    Forme *forme = créer_forme();
+
+    // Par défaut la couche est supposé être active
+    if(canevas->ajouterForme(forme) != true)
+         cout << "Erreur: lorsque l'on ajoute une forme et que la couche est active cela devrait retourner true" << endl;
+
+    if(canevas->translater(1, 1) != true)
+        cout << "Erreur: il devrait être possible de translater une couche active" << endl;
+
+    canevas->desactiverCouche(0);
+    if(canevas->ajouterForme(forme) != false)
+        cout << "Erreur: lorsque l'on ajoute une forme et que la couche est inactive cela devrait retourner false" << endl;
+
+    if(canevas->translater(1, 1) != false)
+        cout << "Erreur: il devrait être possible de translater une couche inactive" << endl;
+
+    if(canevas->aire() < 0)
+        cout << "Erreur: L'air devrait être supérieur ou égale à 0" << endl;
+
+    if(canevas->retirerForme(0) != false)
+            cout << "Erreur: lorsque l'on retire une forme et que la couche est inactive cela devrait retourner false" << endl;
+
+    canevas->activerCouche(0);
+    if(canevas->ajouterForme(forme) != true)
+         cout << "Erreur: lorsque l'on retire une forme et que la couche est active cela devrait retourner true" << endl;
+
+
+    if(canevas->reinitialiserCouche(5) != false)
+         cout << "Erreur: lorsque l'on reinitialiserCouche() à un index supérieur au nombre de couche cela doit retourner false" << endl;
+
+    if(canevas->reinitialiserCouche(0) != true)
+         cout << "Erreur: lorsque l'on reinitialiserCouche() à un index existant cela doit retourner true" << endl;
+
+    if(canevas->reinitialiser() != true)
+         cout << "Erreur: Réinitialiser doit retourner true" << endl;
 }
 
 void Tests::tests_unitaires()

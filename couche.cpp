@@ -36,12 +36,21 @@ bool Couche::translater(int deltaX, int deltaY) {
 bool Couche::reinitialiser() {
     etat = Initialisee;
     formes.vider();
-    return true; // TODO - QUELLE EST LA CONDITION POUR RETOURNER FALSE?
+
+    if(formes.taille() != 0)
+        return false;
+    return true;
 }
 
 bool Couche::changerEtat(Etat e) {
+    if(e != Couche::Active && e != Couche::Inactive && e != Couche::Initialisee)
+        return false;
     etat = e;
-    return true; // TODO - QUELLE EST LA CONDITION POUR RETOURNER FALSE?
+    return true;
+}
+
+Couche::Etat Couche::getEtat() {
+    return etat;
 }
 
 double Couche::aireTotal() {

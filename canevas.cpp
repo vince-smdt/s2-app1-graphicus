@@ -22,15 +22,13 @@ Canevas::~Canevas()
 
 bool Canevas::reinitialiser()
 {
-    bool erreur = false;
-
     for (int i = 0; i < MAX_COUCHES; i++)
-        erreur |= reinitialiserCouche(i);
+        if(reinitialiserCouche(i) == false)
+            return false;
 
     _indexCoucheActive = 0;
-    erreur |= activerCouche(_indexCoucheActive);
 
-    return erreur;
+    return activerCouche(_indexCoucheActive);
 }
 
 bool Canevas::reinitialiserCouche(int index)

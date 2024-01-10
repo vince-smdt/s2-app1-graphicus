@@ -25,7 +25,7 @@
 #ifndef VECTEUR_H
 #define VECTEUR_H
 
-const int CAPACITE_DEPART = 1;
+const int CAPACITE_DEPART = 2;
 
 class Vecteur {
 public:

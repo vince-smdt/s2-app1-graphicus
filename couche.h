@@ -30,6 +30,7 @@ public:
     bool translater(int deltaX, int deltaY);
     bool reinitialiser();
     bool changerEtat(Etat e);
+    Etat getEtat();
 
     double aireTotal();
 
