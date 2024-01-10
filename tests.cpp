@@ -100,15 +100,15 @@ void Tests::tests_unitaires_vecteur()
     if(vecteur->estVide() != true)
         cout << "Erreur: Après avoir appelé vider() il reste des éléments dans le tablau de forme" << endl;    
 
-    if(vecteur->capacite() != 1)
+    if(vecteur->capacite() != 2)
         cout << "Erreur: La capacite par defaut devrait être de 1" << endl;    
 
     vecteur->doublerCapacite();
-    if(vecteur->capacite() != 2)
+    if(vecteur->capacite() != 4)
         cout << "Erreur: La capacite devrait être de 2 puisqu'elle a été doublé 1 fois" << endl;
 
     vecteur->doublerCapacite();
-    if(vecteur->capacite() != 4)
+    if(vecteur->capacite() != 8)
         cout << "Erreur: La capacite devrait être de 4 puisqu'elle a été doublé 2 fois" << endl;      
 }
 
@@ -149,12 +149,13 @@ void Tests::tests_unitaires_couche()
      if(couche->translater(4, 4) != true)
         cout << "Erreur: Lorsque la couche est Active et que l'on appel translater() le méthode devrait retourner true" << endl;
 
+    if(couche->translater(4, 4) != false)
+        cout << "Erreur: Lorsque la couche est Inactive et que l'on appel translater() le méthode devrait retourner false" << endl;
+        
     couche->changerEtat(Couche::Inactive);
     if(couche->ajouterForme(forme) != false)
         cout << "Erreur: Lorsque la couche est Inactive et que l'on appel ajouterForme() le méthode devrait retourner false" << endl;
 
-    if(couche->translater(4, 4) != false)
-        cout << "Erreur: Lorsque la couche est Inactive et que l'on appel translater() le méthode devrait retourner false" << endl;
 
     if(couche->retirerForme(0) != nullptr)
          cout << "Erreur: Lorsque l'on retire une forme d'une couche et que l'état est différent de Active retirerForme() devrait retourner nullptr" << endl;
