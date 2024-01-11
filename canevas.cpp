@@ -70,7 +70,7 @@ bool Canevas::desactiverCouche(int index)
 
 bool Canevas::ajouterForme(Forme *p_forme)
 {
-    if (_indexCoucheActive == -1)
+    if (_indexCoucheActive < 0 || _indexCoucheActive >= MAX_COUCHES)
         return false;
 
     return _couches[_indexCoucheActive].ajouterForme(p_forme);
@@ -78,7 +78,7 @@ bool Canevas::ajouterForme(Forme *p_forme)
 
 bool Canevas::retirerForme(int index)
 {
-    if (_indexCoucheActive == -1)
+    if (_indexCoucheActive < 0 || _indexCoucheActive >= MAX_COUCHES)
         return false;
 
     return _couches[_indexCoucheActive].retirerForme(index);
@@ -96,7 +96,7 @@ double Canevas::aire()
 
 bool Canevas::translater(int deltaX, int deltaY)
 {
-    if (_indexCoucheActive == -1)
+    if (_indexCoucheActive < 0 || _indexCoucheActive >= MAX_COUCHES)
         return false;
 
     return _couches[_indexCoucheActive].translater(deltaX, deltaY);
