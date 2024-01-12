@@ -42,9 +42,7 @@ void Tests::tests_unitaires_formes()
         cout << "Erreur: L'aire du cercle devrait être de 40" << endl;
 
     if(fromeCarre->aire() != l * l)
-        cout << "Erreur: L'aire du carre devrait être de 25" << endl;
-
-  
+        cout << "Erreur: L'aire du carre devrait être de 25" << endl;  
 
     // Forme::getAncrage()
     if (forme->getAncrage().x != x || forme->getAncrage().y != y)
@@ -248,21 +246,34 @@ void Tests::tests_unitaires()
     tests_unitaires_canevas();
 }
 
-void Tests::tests_application()
-{
-    // Fait tous les tests applicatifs
-    tests_application_cas_01();
-    tests_application_cas_02();
-}
+void Tests::tests_validation() {
+    Canevas *canevas = new Canevas();
+    cout << "Etape 1" << endl;
+    canevas->activerCouche(1);
+    Cercle *cercle = new Cercle(0, 1, 5);
+    cercle->afficher(cout);
+    canevas->ajouterForme(new Cercle(0, 1, 5));
+    canevas->ajouterForme(new Carre(1, 2, 6));
+    canevas->ajouterForme(new Rectangle(2, 3, 4, 9));
+    
 
-void Tests::tests_application_cas_01()
-{
-    cout << "TESTS APPLICATION (CAS 01)" << endl;
-    // Il faut ajouter les operations realisant ce scenario de test.
-}
-
-void Tests::tests_application_cas_02()
-{
-    cout << "TESTS APPLICATION (CAS 02)" << endl;
-    // Il faut ajouter les operations realisant ce scenario de test.
+    cout << "Etape 2" << endl;
+    cout << "Etape 3" << endl;
+    cout << "Etape 4" << endl;
+    cout << "Etape 5" << endl;
+    cout << "Etape 6" << endl;
+    cout << "Etape 7" << endl;
+    cout << "Etape 8" << endl;
+    cout << "Etape 9" << endl;
+    cout << "Etape 10" << endl;
+    cout << "Etape 11" << endl;
+    cout << "Etape 12" << endl;
+    cout << "Etape 13" << endl;
+    cout << "Etape 14" << endl;
+    cout << "Etape 15" << endl;
+    cout << "Etape 16" << endl;
+    cout << "Etape 17" << endl;
+    cout << "Etape 18" << endl;
+    cout << "Etape 19" << endl;
+    cout << "Etape 20" << endl;
 }
