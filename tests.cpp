@@ -247,33 +247,153 @@ void Tests::tests_unitaires()
 }
 
 void Tests::tests_validation() {
-    Canevas *canevas = new Canevas();
+        Canevas *canevas = new Canevas();
     cout << "Etape 1" << endl;
-    canevas->activerCouche(1);
-    Cercle *cercle = new Cercle(0, 1, 5);
-    cercle->afficher(cout);
-    canevas->ajouterForme(new Cercle(0, 1, 5));
-    canevas->ajouterForme(new Carre(1, 2, 6));
-    canevas->ajouterForme(new Rectangle(2, 3, 4, 9));
-    
+    cout << "   Activer la couche 2" << endl;
+    canevas->activerCouche(2);
+    cout << endl;
 
+    cout << "   Une cercle a été créé x=0, y=1, rayon=5" << endl;
+    cout << "   Le cercle a été ajouté à la couche 2" << endl;
+    canevas->ajouterForme(new Cercle(0, 1, 5));
+    cout << endl;
+
+    cout << "   Un carré a été créé x=1, y=2, côté=6" << endl;
+    cout << "   Le carré a été ajouté à la couche 2" << endl;
+    canevas->ajouterForme(new Carre(1, 2, 6));
+    cout << endl;
+
+    cout << "   Un rectangle a été créé x=2, y=3, largeur=4, hauteur=9" << endl;
+    cout << "   Le rectangle a été ajouté à la couche 2" << endl;
+    canevas->ajouterForme(new Rectangle(2, 3, 4, 9));
+    cout << endl;
+    
     cout << "Etape 2" << endl;
+    cout << "   Activer la couche 1" << endl;
+    canevas->activerCouche(1);
+    cout << endl;
+
+    cout << "   Un rectangle a été créé x=0, y=0, largeur=12, hauteur=3" << endl;
+    cout << "   Le rectangle a été ajouté à la couche 1" << endl;
+    canevas->ajouterForme(new Rectangle(0, 0, 12, 3));
+    cout << endl;
+
     cout << "Etape 3" << endl;
+    cout << "   Afficher le canevas" << endl;
+    canevas->afficher(cout);
+    cout << endl;
+
     cout << "Etape 4" << endl;
+    cout << "   Afficher l’aire du canevas " << endl;
+    cout << "   Aire du canevas: "  + to_string(canevas->aire()) << endl;
+    cout << endl;
+
     cout << "Etape 5" << endl;
+    cout << "   Activer la couche 0" << endl;
+    canevas->activerCouche(0);
+    cout << endl;
+
+    cout << "   Un rectangle a été créé x=0, y=0, largeur=1, hauteur=1" << endl;
+    cout << "   Le rectangle a été ajouté à la couche 0" << endl;
+    canevas->ajouterForme(new Rectangle(0, 0, 1, 1));
+    cout << endl;
+
+    cout << "   Un carré a été créé x=0, y=0, côté=1" << endl;
+    cout << "   Le carré a été ajouté à la couche 0" << endl;
+    canevas->ajouterForme(new Carre(0, 0, 1));
+    cout << endl;
+
+    cout << "   Une cercle a été créé x=0, y=0, rayon=1" << endl;
+    cout << "   Le cercle a été ajouté à la couche 0" << endl;
+    canevas->ajouterForme(new Cercle(0, 0, 1));
+    cout << endl;
+
     cout << "Etape 6" << endl;
+    cout << "   Activer la couche 2" << endl;
+    canevas->activerCouche(2);
+    cout << endl;
+
+    cout << "   Translater la couche 2 de x=2 et y=1" << endl;
+    canevas->translater(2, 1);
+    cout << endl;
+
     cout << "Etape 7" << endl;
+    cout << "   Afficher le canevas" << endl;
+    canevas->afficher(cout);
+    cout << endl;
+
     cout << "Etape 8" << endl;
+    cout << "   Afficher l’aire du canevas " << endl;
+    cout << "   Aire du canevas: "  + to_string(canevas->aire()) << endl;
+    cout << endl;
+
     cout << "Etape 9" << endl;
+    cout << "   Activer la couche 0" << endl;
+    canevas->activerCouche(0);
+    cout << endl;
+
     cout << "Etape 10" << endl;
+    cout << "   Réinitialiser la couche 1" << endl;
+    canevas->reinitialiserCouche(1);
+    cout << endl;
+    
     cout << "Etape 11" << endl;
+    cout << "   Activer la couche 4" << endl;
+    canevas->activerCouche(4);
+    cout << endl;
+
+
     cout << "Etape 12" << endl;
+    cout << "   Afficher le canevas" << endl;
+    canevas->afficher(cout);
+    cout << endl;
+
     cout << "Etape 13" << endl;
+    cout << "   Afficher l’aire du canevas " << endl;
+    cout << "   Aire du canevas: "  + to_string(canevas->aire()) << endl;
+    cout << endl;
+
     cout << "Etape 14" << endl;
+    cout << "   Réinitialiser le canevas" << endl;
+    canevas->reinitialiser();
+
     cout << "Etape 15" << endl;
+    cout << "   Afficher le canevas" << endl;
+    canevas->afficher(cout);
+    cout << endl;
+
     cout << "Etape 16" << endl;
+    cout << "   Afficher l’aire du canevas " << endl;
+    cout << "   Aire du canevas: "  + to_string(canevas->aire()) << endl;
+    cout << endl;
+
     cout << "Etape 17" << endl;
+    cout << "   Activer la couche 3" << endl;
+    canevas->activerCouche(3);
+    cout << endl;
+
+    cout << "   Un carré a été créé x=10, y=10, côté=10" << endl;
+    cout << "   Le carré a été ajouté à la couche 3" << endl;
+    canevas->ajouterForme(new Carre(10, 10, 10));
+    cout << endl;
+
+    cout << "   Ajout d'une forme null" << endl;
+    Forme *forme = nullptr;
+    canevas->ajouterForme(forme);
+    cout << endl;
+
     cout << "Etape 18" << endl;
+    cout << "   Activer la couche 6" << endl;
+    canevas->activerCouche(6);
+    cout << endl;
+
     cout << "Etape 19" << endl;
+    cout << "   Afficher le canevas" << endl;
+    canevas->afficher(cout);
+    cout << endl;
+
     cout << "Etape 20" << endl;
+    cout << "   Afficher l’aire du canevas " << endl;
+    cout << "   Aire du canevas: "  + to_string(canevas->aire()) << endl;
+    cout << endl;
 }
