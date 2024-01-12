@@ -1,10 +1,10 @@
-all: main clean
+all: graphicus-02 clean
 
-main: main.o tests.o canevas.o couche.o vecteur.o forme.o cercle.o carre.o rectangle.o
-	g++ -o main main.o tests.o canevas.o couche.o vecteur.o forme.o cercle.o carre.o rectangle.o
+graphicus-02: graphicus-02.o tests.o canevas.o couche.o vecteur.o forme.o cercle.o carre.o rectangle.o
+	g++ -o graphicus-02 graphicus-02.o tests.o canevas.o couche.o vecteur.o forme.o cercle.o carre.o rectangle.o
 
-main.o: main.cpp tests.h
-	g++ main.cpp -g -c
+graphicus-02.o: graphicus-02.cpp tests.h
+	g++ graphicus-02.cpp -g -c
 
 tests.o: tests.cpp tests.h canevas.h cercle.h carre.h
 	g++ tests.cpp -g -c

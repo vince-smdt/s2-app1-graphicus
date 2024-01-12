@@ -59,7 +59,7 @@ void Tests::tests_unitaires_formes()
     if(forme->getAncrage().x != c.x && forme->getAncrage().y != c.y)
         cout << "Erreur: getAncrage devrait retourner 2 pour x et 3 pour y" << endl;
 
-    cout << "TERMINe - tests_unitaires_formes" << endl;
+    cout << "Fin - tests_unitaires_formes" << endl;
 }
 
 void Tests::tests_unitaires_vecteur()
