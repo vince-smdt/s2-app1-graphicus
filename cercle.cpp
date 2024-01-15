@@ -1,6 +1,6 @@
 /********
  * Fichier: cercle.cpp
- * Auteurs: Vincent Simard-Schmidt & Kevin Gauvin
+ * Auteurs: Vincent Simard-Schmidt (simv2104) & Kevin Gauvin (gauk1703)
  * Date: 05 janvier 2024 (creation)
  * Description: Implementation des methodes des classes decrites dans
  *    cercle.h. Ce fichier fait partie de la distribution de Graphicus.

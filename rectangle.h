@@ -1,6 +1,6 @@
 /********
  * Fichier: rectangle.h
- * Auteurs: Vincent Simard-Schmidt & Kevin Gauvin
+ * Auteurs: Vincent Simard-Schmidt (simv2104) & Kevin Gauvin (gauk1703)
  * Date: 05 janvier 2024 (creation)
  * Description: Declaration de la classe Rectangle. La classe
  *    herite de la classe Forme et represente un rectangle par sa

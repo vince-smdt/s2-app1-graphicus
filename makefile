@@ -1,3 +1,9 @@
+# Fichier: graphicus-02.cpp
+# Auteurs: Vincent Simard-Schmidt (simv2104) & Kevin Gauvin (gauk1703)
+# Date : 14 janvier 2024
+# Description: Fichier permettant de construire le projet et de generer
+#              le fichier executable
+
 all: graphicus-02 clean
 
 graphicus-02: graphicus-02.o tests.o canevas.o couche.o vecteur.o forme.o cercle.o carre.o rectangle.o

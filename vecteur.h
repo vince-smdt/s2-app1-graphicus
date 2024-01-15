@@ -1,6 +1,6 @@
 /********
  * Fichier: vecteur.h
- * Auteurs: Vincent Simard-Schmidt & Kevin Gauvin
+ * Auteurs: Vincent Simard-Schmidt (simv2104) & Kevin Gauvin (gauk1703)
  * Date: 05 janvier 2024 (creation)
  * Description: Declaration de la classe Vecteur. La classe permet
  *    de stocker plusieurs formes et peut dynamiquement modifier

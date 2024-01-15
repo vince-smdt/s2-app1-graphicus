@@ -2,7 +2,7 @@
  * Fichier: couche.h
  * Auteurs: C.-A. Brunet
  * Date: 04 janvier 2024 (creation)
- * Modifie par : Vincent Simard-Schmidt & Kevin Gauvin
+ * Modifie par : Vincent Simard-Schmidt (simv2104) & Kevin Gauvin (gauk1703)
  * Date : 05 janvier 2024
  * Description: Declaration de la classe pour une couche dans un
  *    canevas. La classe Couche gere un vecteur de pointeur de formes

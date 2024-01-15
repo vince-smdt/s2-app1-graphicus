@@ -2,6 +2,8 @@
  * Fichier: tests.h
  * Auteurs: C.-A. Brunet
  * Date: 08 janvier 2018 (creation)
+ * Modifie par : Vincent Simard-Schmidt (simv2104) & Kevin Gauvin (gauk1703)
+ * Date : 10 janvier 2024
  * Description: Declaration de la classe pour les tests de Graphicus.
  *    Ce fichier peut etre adapte a vos besoins de tests. Ce fichier
  *    fait partie de la distribution de Graphicus.

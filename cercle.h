@@ -1,6 +1,6 @@
 /********
  * Fichier: cercle.h
- * Auteurs: Vincent Simard-Schmidt & Kevin Gauvin
+ * Auteurs: Vincent Simard-Schmidt (simv2104) & Kevin Gauvin (gauk1703)
  * Date: 05 janvier 2024 (creation)
  * Description: Declaration de la classe Cercle. La classe
  *    hérite de la classe Forme et représente un cercle par son

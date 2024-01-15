@@ -2,7 +2,7 @@
  * Fichier: couche.cpp
  * Auteurs: C.-A. Brunet
  * Date: 04 janvier 2024 (creation)
- * Modifie par : Vincent Simard-Schmidt & Kevin Gauvin
+ * Modifie par : Vincent Simard-Schmidt (simv2104) & Kevin Gauvin (gauk1703)
  * Date : 05 janvier 2024
  * Description: Implementation des methodes des classes decrites dans
  *    couche.h. Ce fichier fait partie de la distribution de Graphicus.
